@@ -74,25 +74,40 @@ const evenBelow = (num) => {
 };
 // evenBelow(10);
 
-const evenIn = (num) => {
-  const result = num.filter((x) => x % 2 === 0);
+const evenIn = (array) => {
+  const result = array.filter((x) => x % 2 === 0);
   console.log(result);
   return result;
 };
 // evenIn([0, 1, 2, 3, 4, 5, 6]);
 
-const multiplyArray = (num) => {
+const multiplyArray = (array) => {
   let sum = 1;
-  for (let i = 0; i < num.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     // 0 1 2 3
-    sum = sum * num[i];
+    result = result * array[i];
   }
   console.log(sum);
   return sum;
 };
-multiplyArray([1, 2, 3, 4]);
+// multiplyArray([1, 2, 3, 4, 5]);
 
-const divideArray = () => {};
+const divideArray = (array) => {
+  let result = 1;
+  if (array.includes(0)) {
+    return 0;
+  } else if (array.length === 1) {
+    return array[0];
+  } else {
+    for (let i = 0; i < array.length; i++) {
+      result = result / array[i];
+    }
+    return result;
+  }
+};
+// console.log(divideArray([4]));
+// console.log(divideArray([1, 2, 3]));
+// console.log(divideArray([0, 1, 2, 3]));
 
 module.exports = {
   double1,
@@ -106,4 +121,6 @@ module.exports = {
   even,
   evenBelow,
   evenIn,
+  multiplyArray,
+  divideArray,
 };
